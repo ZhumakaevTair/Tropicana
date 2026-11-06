@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        header {
+            background-color: #252525;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        nav {
+            margin-top: 25px;
+        }
+        nav a {
+           color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 17px;
+        }
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.55),
+                rgba(0, 0, 0, 0.55)
+            ),
+            url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200");
+
+            background-color: cover;
+            background-position: center;
+            color: white;
+        }
+        .hero h2 {
+            font-size: 36px;
+        }
+        .hero p {
+            font-size: 18px;
+            color: white;
+        }
+        .hero button {
+            background-color: #a87945;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #menu {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        #menu h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+        .food-card {
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .food-card span {
+            color: #a87945;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .food-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .food-card {
+            transition: 0.3s;
+        }
+        .food-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        #contacts {
+            background-color: #252525;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        #contacts h2 {
+            font-size: 30px;
+        }
+        footer {
+            background-color: #181818;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        #cart {
+            background-color: white;
+            max-width: 600px;
+            margin: 40PX auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        #cart h2 {
+            text-align: center;
+        }
+        #cart p {
+            font-size: 18px;
+        }
+        #total-price {
+            font-weight: bold;
+        }
+        .food-card button {
+            background-color: #a87945;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .food-card button:hover {
+            background-color: #80552d;
+        }
+        #booking-form {
+            background-color: white;
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        #booking-form input,
+        #booking-form select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+        #booking-form button {
+            background-color: #a87945;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+
+            header {
+                padding: 20px 10px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 70px 15px;
+            }
+            
+            .hero h2 {
+                font-size: 26px;
+            }
+
+            .food-card {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            #cart {
+                margin: 20px 10px;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro - ресторан</title>
+</head>
+<body>
+    <header>
+        <h1>BISTRO</h1>
+        <p>Ресторан современной кухни</p>
+        <nav>
+            <a href="#about">О нас</a>
+            <a href="#menu">Меню</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+    <section class="hero" id="about">
+        <h2>Вкус, который хочется повторить</h2>
+        <p>Открой для себя мир современной кухни</p>
+        <button>Посмотреть меню</button>
+    </section>
+    <section id="menu">
+        <h2>Наше меню</h2>
+
+        <div class="menu-container">
+
+            <div class="food-card">
+                <h3>Паста Карбонара</h3>
+                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500"
+                alt="Паста Карбонара">
+                <p>Сливочная паста с говядиной</p>
+                <span>3500тг</span>
+                <button onclick="addToCart('Паста Карбонара', 3500)">
+                    Заказать
+                </button>
+            </div>
+
+             <div class="food-card">
+                <h3>Пицца Маргарита</h3>
+                <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500"
+                alt="Пицца Маргарита">
+                <p>Томаты, сыр и базилик</p>
+                <span>2800тг</span>
+                <button onclick="addToCart('Пицца Маргарита', 2800)">
+                    Заказать
+                </button>
+             </div>
+
+             <div class="food-card">
+                <h3>Чизкейк</h3>
+                <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500"
+                alt="Чизкейк">
+                <p>Нежный десерт с ягодами</p>
+                <span>1800тг</span>
+                <button onclick="addToCart('Чизкейк', 1800)">
+                    Заказать
+                </button>
+             </div>
+
+        </div>
+    </section>
+    <section id="cart">
+        <h2>Корзина</h2>
+
+        <p>Количество блюд: <span id="cart-count">0</span></p>
+
+        <div id="cart-items"></div>
+
+        <p>Итого: <span id="total-price">0</span>тг</p>
+        <button onclick="clearCart()">Очистить корзину</button>
+    </section>
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <p>Адрес: город Астана</p>
+        <p>Телефон: +7 700 000 00 00</p>
+        <p>Время работы: 10:00 - 23:00</p>
+        <form id="booking-form">
+        
+            <h3>Забронировать столик</h3>
+
+            <input type="text" placeholder="Ваше имя" required>
+
+            <input tipe="tel" placeholder="Ваш телефон" required>
+
+            <input type="date" required>
+
+            <select required>
+                <option value="">Количество гостей</option>
+                <option>1 человек</option>
+                <option>2 человека</option>
+                <option>3 человека</option>
+                <option>4 человека</option>
+            </select>
+
+            <button type="submit">Забронировать</button>
+
+        </form>
+    </section>
+    <script>
+        function bookTable() {
+            alert("Для бронирования позвоните нам!");
+        }
+        let cartCount = 0;
+        let totalPrice = 0;
+    
+        function addToCart(productName, price) {
+            cartCount = cartCount + 1;
+            totalPrice = totalPrice + price;
+
+            document.getElementById("cart-count").textContent = cartCount;
+
+            document.getElementById("cart-items").innerHTML += "<p>" + productName + " - " + price + "тг</p>"
+            
+            document.getElementById("total-price").textContent = totalPrice;
+        }
+        function clearCart() {
+            cartCount = 0;
+            totalPrice = 0;
+
+            document.getElementById("cart-count").textContent = 0;
+
+            document.getElementById("total-price").textContent = 0;
+
+            document.getElementById("cart-items").innerHTML = "";
+        }
+        document.getElementById("booking-form").addEventListener("submit", function(event)
+    {
+        event.preventDefault();
+
+        alert("Спасибо! Ваша заявка на бронирование принята. ");
+
+        document.getElementById("booking-form").reset();
+    });
+    </script>
+    <footer>
+        <p>BISTRO © 2026</p>
+        <P>Все права защищены</P>
+    </footer>
+</body>
+</html>
