@@ -3,198 +3,390 @@
 <head>
     <style>
         body {
-            background-color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
+         background-color: white;
+         font-family: Arial, Helvetica, sans-serif;
+         margin: 0;
         }
         header {
-            background-color: #252525;
-            color: white;
-            text-align: center;
-            padding: 30px;
+        background-color: #16A6A0;
+        color: white;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        }
+        header h1 {
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 3px;
         }
         nav {
-            margin-top: 25px;
+        display: flex;
+        gap: 25px;
         }
         nav a {
-           color: white;
-            text-decoration: none;
-            margin: 10px;
-            font-size: 17px;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.3s;
+        }
+        nav a:hover {
+        color: #E8D2AE;
+        }
+        nav {
+         margin-top: 25px;
+        }
+        nav a {
+         color: white;
+         text-decoration: none;
+         margin: 10px;
+          font-size: 17px;
+         font-weight: bold;
         }
         .hero {
-            text-align: center;
-            padding: 120px 20px;
-            background-image: linear-gradient(
-                rgba(0, 0, 0, 0.55),
-                rgba(0, 0, 0, 0.55)
-            ),
-            url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200");
+        text-align: center;
+        padding: 120px 20px;
+         background-image: linear-gradient(
+            rgba(0, 0, 0, 0.55),
+             rgba(0, 0, 0, 0.55)
+        ),
+         url("images/Тропикана_картина.jpeg");
 
-            background-color: cover;
-            background-position: center;
-            color: white;
+         background-color: cover;
+         background-position: center;
+         color: white;
         }
         .hero h2 {
-            font-size: 36px;
+        font-size: 52px;
+        max-width: 800px;
+        margin: 0 auto 20px;
+        line-height: 1.2;
+        letter-spacing: 2px;
         }
         .hero p {
-            font-size: 18px;
-            color: white;
+        font-size: 20px;
+        color: white;
+        max-width: 600px;
+        margin: 0 auto 30px;
+        line-height: 1.6;
         }
         .hero button {
-            background-color: #a87945;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
+        background-color: #E8D2AE;
+        color: #174F48;
+         border: none;
+         padding: 15px 30px;
+         border-radius: 30px;
+         font-size: 16px;
+         font-weight: bold;
+         cursor: pointer;
+         transition: 0.3s;
         }
-        #menu {
-            text-align: center;
-            padding: 40px 20px;
-        }
-        #menu h2 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
-        .menu-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
-        .food-card {
-            background-color: white;
-            width: 250px;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .food-card span {
-            color: #a87945;
-            font-weight: bold;
-            font-size: 20px;
-        }
-        .food-card img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        .food-card {
-            transition: 0.3s;
-        }
-        .food-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        .hero button:hover {
+         background-color: white;
+          transform: scale(1.05);
         }
         #contacts {
-            background-color: #252525;
-            color: white;
-            text-align: center;
-            padding: 40px;
+         background-color: #252525;
+          color: white;
+         text-align: center;
+         padding: 40px;
         }
         #contacts h2 {
-            font-size: 30px;
+         font-size: 30px;
         }
         footer {
-            background-color: #181818;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
+        background-color: #123F3B;
+        color: white;
+        padding: 40px 20px 20px;
+        text-align: center;
+        margin-top: 0;
+        }
+        .footer-content h2 {
+        font-size: 26px;
+        letter-spacing: 3px;
+        margin-bottom: 10px;
+        }
+        .footer-content p {
+        color: #C8D8D4;
+        }
+        .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin: 25px 0;
+        }
+        .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        }
+        .footer-links a:hover {
+        color: #E8D2AE;
+        }
+        .copyright {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-top: 20px;
+        margin-top: 25px;
+        color: #AFC3BE;
+        font-size: 13px;
+        }
+        #catalog {
+        padding: 50px 20px;
+        background-color: #FFFDF6;
+        text-align: center;
+        }
+        #catalog h2 {
+        color: #174F48;
+        font-size: 32px;
+        margin-bottom: 35px;
+        }
+        .product-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        }
+        product-card {
+        background-color: white;
+        width: 260px;
+        padding: 12px;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+        transform: translateY(-5px);
+        }
+        .product-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: contain;
+        object-position: center;
+        border-radius: 10px;
+        transition: transform 0.4s ease;
+        }
+        .product-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #174F48;
+        }
+        .product-card span {
+        font-size: 19px;
+        font-weight: bold;
+        color: #174F48;
+        }
+        .product-card {
+        transition: 0.3s;
+        }
+        .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .buy-button {
+        background-color: #16A6A0;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 15px;
+        transition: 0.3s;
+        }
+        .buy-button:hover {
+        background-color: #174F48;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(23, 79, 72, 0.2);
+        }
+        .product-card p {
+        color: #666666;
+        font-size: 15px;
+        line-height: 1.5;
+        }
+        .product-card span {
+        display: block;
+        margin-top: 12px;
+        }
+        .buy-button {
+        width: 100%;
+        transition: 0.3s ease;
+        letter-spacing: 0.5px;
         }
         #cart {
-            background-color: white;
-            max-width: 600px;
-            margin: 40PX auto;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background-color: #E8F5F2;
+        padding: 40px 20px;
+        text-align: center;
         }
         #cart h2 {
-            text-align: center;
+        color: #174F48;
+        font-size: 30px;
         }
-        #cart p {
-            font-size: 18px;
+        #cart-items {
+        max-width: 600px;
+        margin: 20px auto;
         }
-        #total-price {
-            font-weight: bold;
+        #cart-items p {
+        color: #666666;
         }
-        .food-card button {
-            background-color: #a87945;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 15px;
-            transition: 0.3s;
+        #total {
+        color: #16A6A0;
         }
-        .food-card button:hover {
-            background-color: #80552d;
+        .cart-product {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        background-color: white;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 10px;
         }
-        #booking-form {
-            background-color: white;
-            max-width: 400px;
-            margin: 30px auto;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
+        .remove-button {
+        background-color: #D96C5F;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
         }
-        #booking-form input,
-        #booking-form select {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 15px;
+       .remove-button:hover {
+        background-color: #B94B40;
         }
-        #booking-form button {
-            background-color: #a87945;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 6px;
-            cursor: pointer;
+        .product-card img {
+        transition: transform 0.4s ease;
+        }
+        .product-card:hover img {
+        transform: scale(1.04);
+        }
+        .product-card {
+        overflow: hidden;
+        }
+        .product-card h3 {
+        color: #174F48;
+        font-size: 20px;
+        margin: 18px 0 10px;
+        }
+       .product-card p {
+        color: #777777;
+        font-size: 14px;
+        line-height: 1.6;
+        }
+        #contacts {
+        background-color: #174F48;
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+        }
+        #contacts h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+        }
+        #contacts p {
+        font-size: 16px;
+        line-height: 1.7;
+        }
+        .contact-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 28px;
+        background-color: #16A6A0;
+        color: white;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        transition: 0.3s;
+        }
+        .contact-button:hover {
+        background-color: #E8D2AE;
+        color: #174F48;
+        transform: translateY(-3px);
+        }
+        #story {
+        background-color: #FFFDF6;
+        padding: 70px 20px;
+        text-align: center;
+        }
+        #story h2 {
+        color: #174F48;
+        font-size: 34px;
+        margin-bottom: 25px;
+        }
+        #story p {
+        color: #6B7772;
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 17px;
+        line-height: 1.8;
+        }
+        .hero h2,
+        .hero p,
+        .hero button {
+        animation: fadeUp 0.8s ease both;
+        }
+        .hero p {
+        animation-delay: 0.15s;
+        }
+        .hero button {
+        animation-delay: 0.3s;
+        }
+        @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
         }
         @media (max-width: 600px) {
-
             header {
                 padding: 20px 10px;
             }
-
             header h1 {
                 font-size: 28px;
             }
-
             nav a {
                 display: inline-block;
                 margin: 8px;
                 font-size: 14px;
             }
-
-            .hero {
-                padding: 70px 15px;
-            }
-            
             .hero h2 {
-                font-size: 26px;
+            font-size: 30px;
+            letter-spacing: 1px;
             }
-
-            .food-card {
-                width: 100%;
-                max-width: 300px;
+            .hero p {
+            font-size: 16px;
             }
-
-            #cart {
-                margin: 20px 10px;
+            .product-container {
+            gap: 20px;
+            }
+           .product-card {
+            width: 100%;
+            max-width: 400px;
+            }
+            #catalog h2 {
+            font-size: 27px;
+            }
+            .cart-product {
+            flex-direction: column;
+            }
+            header {
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            }
+            nav {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
             }
         }
         html {
@@ -203,139 +395,119 @@
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bistro - ресторан</title>
+    <title>Tropicana - магазин пляжной одежды</title>
 </head>
 <body>
+
     <header>
-        <h1>BISTRO</h1>
-        <p>Ресторан современной кухни</p>
-        <nav>
-            <a href="#about">О нас</a>
-            <a href="#menu">Меню</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
+      <h1>TROPICANA</h1>
+
+      <nav>
+          <a href="#about">Главная</a>
+          <a href="#catalog">Каталог</a>
+          <a href="#contacts">Контакты</a>
+      </nav>
     </header>
+
     <section class="hero" id="about">
-        <h2>Вкус, который хочется повторить</h2>
-        <p>Открой для себя мир современной кухни</p>
-        <button>Посмотреть меню</button>
+      <h2>ПОЧУВСТВУЙ АТМОСФЕРУ ЛЕТА</h2>
+
+    <p>Открой для себя коллекцию пляжной одежды от TROPICANA</p>
+
+    <button onclick="document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' })">
+        Посмотреть товары
+    </button>
     </section>
-    <section id="menu">
-        <h2>Наше меню</h2>
+    <section id="story">
+        <h2>Лето начинается здесь</h2>
+        <p>
+            Tropicana — коллекция для тех, кто любит солнце,
+            море и свободу. Открой для себя вещи, которые
+            создают настроение отдыха.
+        </p>
+    </section>
+    <section id="catalog">
+         <h2>Наша коллекция</h2>
 
-        <div class="menu-container">
+    <div class="product-container">
 
-            <div class="food-card">
-                <h3>Паста Карбонара</h3>
-                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500"
-                alt="Паста Карбонара">
-                <p>Сливочная паста с говядиной</p>
-                <span>3500тг</span>
-                <button onclick="addToCart('Паста Карбонара', 3500)">
-                    Заказать
-                </button>
-            </div>
-
-             <div class="food-card">
-                <h3>Пицца Маргарита</h3>
-                <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?w=500"
-                alt="Пицца Маргарита">
-                <p>Томаты, сыр и базилик</p>
-                <span>2800тг</span>
-                <button onclick="addToCart('Пицца Маргарита', 2800)">
-                    Заказать
-                </button>
-             </div>
-
-             <div class="food-card">
-                <h3>Чизкейк</h3>
-                <img src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500"
-                alt="Чизкейк">
-                <p>Нежный десерт с ягодами</p>
-                <span>1800тг</span>
-                <button onclick="addToCart('Чизкейк', 1800)">
-                    Заказать
-                </button>
-             </div>
-
+        <div class="product-card">
+            <img src="images/Двойка_Моана.jpeg" alt="Двойка Моана">
+            <h3>Двойка Моана</h3>
+            <p>Размер: 44-46 (M-L)</p>
+            <span>16000 ₸</span>
+            <button class="buy-button">Купить</button>
         </div>
+
+        <div class="product-card">
+            <img src="images/Джинсовые_шорты.jpeg" alt="Джинсовые шорты">
+            <h3>Джинсовые шорты</h3>
+            <p>Размер: M-2XL</p>
+            <span>6000 ₸</span>
+            <button class="buy-button">Купить</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/Легкие_шорты.jpeg" alt="Лёгкие_шорты">
+            <h3>Легкие шорты</h3>
+            <p>Размер: S-XL</p>
+            <span>8500 ₸</span>
+            <button class="buy-button">Купить</button>
+        </div>
+
+    </div>
     </section>
-    <section id="cart">
-        <h2>Корзина</h2>
-
-        <p>Количество блюд: <span id="cart-count">0</span></p>
-
-        <div id="cart-items"></div>
-
-        <p>Итого: <span id="total-price">0</span>тг</p>
-        <button onclick="clearCart()">Очистить корзину</button>
+      <section id="cart">
+      <h2>Моя корзина</h2>
+      <div id="cart-items">
+        <p>Корзина пока пуста</p>
+      </div>
+      <h3>Итого: <span id="total">0</span> ₸</h3>
     </section>
     <section id="contacts">
-        <h2>Контакты</h2>
-        <p>Адрес: город Астана</p>
-        <p>Телефон: +7 700 000 00 00</p>
-        <p>Время работы: 10:00 - 23:00</p>
-        <form id="booking-form">
-        
-            <h3>Забронировать столик</h3>
-
-            <input type="text" placeholder="Ваше имя" required>
-
-            <input tipe="tel" placeholder="Ваш телефон" required>
-
-            <input type="date" required>
-
-            <select required>
-                <option value="">Количество гостей</option>
-                <option>1 человек</option>
-                <option>2 человека</option>
-                <option>3 человека</option>
-                <option>4 человека</option>
-            </select>
-
-            <button type="submit">Забронировать</button>
-
-        </form>
+       <h2>Свяжитесь с нами</h2>
+       <p>Поможем подобрать пляжную одежду и ответим на ваши вопросы.</p>
+       <p>Астана, Казахстан</p>
+       <a href="https://wa.me/77029629256" target="_blank" class="contact-button">
+           Написать в WhatsApp
+       </a>
     </section>
-    <script>
-        function bookTable() {
-            alert("Для бронирования позвоните нам!");
-        }
-        let cartCount = 0;
-        let totalPrice = 0;
-    
-        function addToCart(productName, price) {
-            cartCount = cartCount + 1;
-            totalPrice = totalPrice + price;
 
-            document.getElementById("cart-count").textContent = cartCount;
-
-            document.getElementById("cart-items").innerHTML += "<p>" + productName + " - " + price + "тг</p>"
-            
-            document.getElementById("total-price").textContent = totalPrice;
-        }
-        function clearCart() {
-            cartCount = 0;
-            totalPrice = 0;
-
-            document.getElementById("cart-count").textContent = 0;
-
-            document.getElementById("total-price").textContent = 0;
-
-            document.getElementById("cart-items").innerHTML = "";
-        }
-        document.getElementById("booking-form").addEventListener("submit", function(event)
-    {
-        event.preventDefault();
-
-        alert("Спасибо! Ваша заявка на бронирование принята. ");
-
-        document.getElementById("booking-form").reset();
-    });
-    </script>
     <footer>
-        <p>BISTRO © 2026</p>
-        <P>Все права защищены</P>
+        <div class="footer-content">
+            <h2>TROPICANA</h2>
+            <p>Пляжная одежда и атмосфера лета</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#about">Главная</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#contacts">Контакты</a>
+        </div>
+
+        <p class="copyright">© 2026 TROPICANA. Все права защищены.</p>
     </footer>
+
+    <script>
+      const buttons = document.querySelectorAll(".buy-button");
+
+      buttons.forEach(button => {
+          button.addEventListener("click", function() {
+              const card = button.closest(".product-card");
+
+              const name = card.querySelector("h3").textContent;
+              const price = card.querySelector("span").textContent;
+
+              const phone = "77029629256";
+
+              const message = `Здравствуйте! Хочу заказать: ${name}. Цена: ${price}.`;
+
+              const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+              window.open(link, "_blank");
+          });
+      });
+  </script>
+
 </body>
 </html>
