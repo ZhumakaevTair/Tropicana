@@ -1,2 +1,2 @@
-# Bistro
+# Tropicana
 My first restaurant website
